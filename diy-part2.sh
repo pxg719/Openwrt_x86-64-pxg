@@ -12,7 +12,7 @@
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-cat >$NETIP <<-EOF
+cat > $NETIP <<-EOF
 uci set network.lan.ipaddr='192.168.5.1'                                   # IPv4 地址(openwrt后台地址)
 uci set network.lan.netmask='255.255.255.0'                                 # IPv4 子网掩码
 #uci set network.lan.gateway='192.168.1.1'                                   # IPv4 网关
@@ -39,6 +39,6 @@ sed -i '/CYXluq4wUazHjmCDBCqXF/d' $ZZZ                                          
 
 
 # 在线更新时，删除不想保留固件的某个文件，在EOF跟EOF直接加入删除代码，记住这里对应的是固件的文件路径，比如： rm /etc/config/luci
-cat >$DELETE <<-EOF
-EOF
+#cat > $DELETE <<-EOF
+#EOF
 
