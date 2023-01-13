@@ -13,7 +13,7 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 cat > $NETIP <<EOF
-uci set network.lan.ipaddr='192.168.5.1'                                   # IPv4 地址(openwrt后台地址)
+uci set network.lan.ipaddr='192.168.1.50'                                   # IPv4 地址(openwrt后台地址)
 uci set network.lan.netmask='255.255.255.0'                                 # IPv4 子网掩码
 #uci set network.lan.gateway='192.168.1.1'                                   # IPv4 网关
 #uci set network.lan.broadcast='192.168.1.255'                               # IPv4 广播
@@ -32,7 +32,7 @@ sed -i "s/OpenWrt /OpenWrt_x64_全功能版 by GXNAS build $(TZ=UTC-8 date "+%Y.
 
 sed -i '/CYXluq4wUazHjmCDBCqXF/d' $ZZZ                                                             # 设置密码为空
 
-#sed -i 's/PATCHVER:=5.4/PATCHVER:=5.10/g' target/linux/x86/Makefile                               # x86机型,默认内核5.4，修改内核为5.10
+sed -i 's/PATCHVER:=5.4/PATCHVER:=5.15/g' target/linux/x86/Makefile                               # x86机型,默认内核5.4，修改内核为5.10
 
 # K3专用，编译K3的时候只会出K3固件
 #sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
